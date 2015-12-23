@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{site.author}}">
+    <meta name="title" content="{{ site.title }}">
+    <title>{{ site.title }}</title>
+
+    <link rel="canonical" href="http://craftworks.at/"/>
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/material-design-lite/dist/material.min.js"></script>
+
+    <link href="/node_modules/material-design-lite/dist/material.blue_grey-indigo.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="/css/app.css" rel="stylesheet">
+    {% include favicon.html %}
+</head>
+<body class="index2">
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--waterfall mdl-layout__header--waterfall-hide-top">
+            <div class="mdl-layout__header-row header__top">
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Title -->
+                <h2 class="mdl-typography--font-light mdl-color-text--primary-dark">{{site.description}}</h2>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+            </div>
+            <div class="mdl-layout__header-row header__main">
+
+                <!-- Title -->
+                <span class="mdl-layout-title">
+                    <img class="img" src="/img/logo.png" height="32px"/>
+                </span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                {% include menu.html %}
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            {{content}}
+            {% include footer.html %}
+        </main>
+    </div>
+</body>
+</html>

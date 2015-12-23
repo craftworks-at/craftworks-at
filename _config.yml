@@ -1,0 +1,18 @@
+---
+### checkout http://jekyllrb.com/docs/configuration/#default-configuration ###
+
+### site serving configuration ###
+exclude: [CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+
+
+### content configuration ###
+title:       "craftworks"
+keywords:    "craftworks, gmbh, company, software "
+description: "craftworks - think modern, think simple, think software"
+author: "craftworks GmbH"
+baseurl: "/"
+google_analytics_key: "UA-71534751-1"
+
+sass:
+  sass_dir: css
+  style: compressed
