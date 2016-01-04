@@ -1,15 +1,10 @@
-{% assign url_parts = page.url | split: '/' %}
-{% assign url_parts_size = url_parts | size %}
-{% assign rm = url_parts | last %}
-{% assign base_url = page.url | replace: rm %}
+<!-- currently no active tab or subemnu suppert because currently not needed here -->
+<!-- http://thinkshout.com/blog/2014/12/creating-dynamic-menus-in-jekyll/ -->
 
 <nav class="mdl-navigation">
     {% for node in site.pages %}
-    {% assign node_url_parts = node.url | split: '/' %}
-    {% assign node_url_parts_size = node_url_parts | size %}
-    {% assign filename = node_url_parts | last %}
     {% assign filetype = node.url | split: '.' | last %}
-    {% if filetype == 'html' or filetype == 'md' %}
+    {% if node.url != '/index.html' and (filetype == 'html' or filetype == 'md') %}
     <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.url}}'>{{node.title}}</a>
     {% endif %}
     {% endfor %}
