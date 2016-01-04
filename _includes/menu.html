@@ -5,11 +5,11 @@
 
 <nav class="mdl-navigation">
     {% for node in site.pages %}
-    node.url
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if url_parts_size == node_url_parts_size %}
+    {% assign filetype = node.url | split: '.' | last %}
+    {% if filetype == 'html' or filetype == 'md' %}
     <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.url}}'>{{node.title}}</a>
     {% endif %}
     {% endfor %}
