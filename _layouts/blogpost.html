@@ -25,7 +25,7 @@
     <link href="/css/app.css" rel="stylesheet">
     {% include favicon.html %}
 </head>
-<body>
+<body class="index2">
     <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header mdl-layout__header--waterfall mdl-layout__header--waterfall-hide-top">
             <div class="mdl-layout__header-row header__top">
@@ -48,8 +48,14 @@
                 {% include menu.html %}
             </div>
         </header>
-        <main class="mdl-layout__content">
-            {{content}}
+        <main class="mdl-layout__content blogpost">
+            <section class="mdl-grid">
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--10-col">
+                    {{content}}
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+            </section>
             {% include footer.html %}
         </main>
     </div>

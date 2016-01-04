@@ -2,11 +2,13 @@
 
 /* index2 */
 
-body.index2 .mdl-layout__content section {
-  padding-bottom: 2em;
-  border-bottom: 1px solid #f1f1f1;
-  .section__content {
-    padding: 2em;
-    border-bottom: none;
+.index2 {
+  section {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #f1f1f1;
+    .section__content {
+      padding: 2em;
+      border-bottom: none;
+    }
   }
 }
