@@ -3,9 +3,8 @@
 
 <nav class="mdl-navigation">
     {% for node in site.pages %}
-    {% assign filetype = node.url | split: '.' | last %}
-    {% if node.url and node.title %}
-    <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.url}}'>{{node.title}}</a>
-    {% endif %}
+        {% if node.url and node.title %}
+        <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.url}}'>{{node.title}}</a>
+        {% endif %}
     {% endfor %}
 </nav>
