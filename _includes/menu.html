@@ -3,16 +3,9 @@
 
 <nav class="mdl-navigation">
     {% for node in site.pages %}
-        {% assign filetype = node.url | split: '.' | last %}
-        {% if node.url != '/index.html' and (filetype == 'html' or filetype == 'md') %}
-            <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.dir}}/'>{{node.title}}</a>
-        {% endif %}
+    {% assign filetype = node.url | split: '.' | last %}
+    {% if node.url != '/index.html' and (filetype == 'html' or filetype == 'md') %}
+    <a class="mdl-navigation__link mdl-color-text--accent-contrast" href='{{node.dir}}'>{{node.title}}</a>
+    {% endif %}
     {% endfor %}
 </nav>
-
-{% for node in site.pages %}
-<pre>
-    {{ node | inspect }}
-</pre>
-
-{% endfor %}
