@@ -50,11 +50,6 @@
         </header>
         <main class="mdl-layout__content">
             {{content}}
-            {% for node in site.pages %}
-            <p>
-                {{node.title}} - {{node.url}}
-            </p>
-            {% endfor %}
             {% include footer.html %}
         </main>
     </div>
