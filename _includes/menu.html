@@ -1,11 +1,6 @@
 <!-- currently no active tab or subemnu suppert because currently not needed here -->
 <!-- http://thinkshout.com/blog/2014/12/creating-dynamic-menus-in-jekyll/ -->
 
-<!--
-{% for node in site.pages %}
-<pre>{{ node | inspect }}</pre>
-{% endfor %}
--->
 <nav class="mdl-navigation">
     {% for node in site.pages %}
         {% assign filetype = node.url | split: '.' | last %}
@@ -14,3 +9,10 @@
         {% endif %}
     {% endfor %}
 </nav>
+
+{% for node in site.pages %}
+<pre>
+    {{ node | inspect }}
+</pre>
+
+{% endfor %}
