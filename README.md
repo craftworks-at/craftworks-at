@@ -32,3 +32,11 @@ bundle exec jekyll serve
 ```
 jekyll serve -w --baseurl=""
 ```
+
+
+# Output / Inspect Variables in templates
+```
+{% for node in site.pages %}
+    <pre>{{ node | inspect }}</pre>
+{% endfor %}
+```
