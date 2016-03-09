@@ -4,8 +4,14 @@
 // global variables
 @import "variables";
 
-@import "../_layouts/default";
-@import "../_layouts/blogpost";
-@import "../index2/index";
-@import "../blog/index";
-@import "../test/index";
+// mdl
+@import "../node_modules/material-design-lite/src/variables";
+@import "../node_modules/material-design-lite/src/resets/resets";
+@import "../node_modules/material-design-lite/src/layout/layout";
+@import "../node_modules/material-design-lite/src/mixins";
+@import "../node_modules/material-design-lite/src/grid/grid";
+
+@import "header";
+@import "footer";
+@import "index/index";
+@import "blog/blog";
