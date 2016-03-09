@@ -4,6 +4,10 @@
  *******************/
 
 $max-width: 1000px;
+$what-box-width: 300px;
+$what-box-margin: 63px; // ($what-box-width - sqrt( 2 * ($what-box-width * $what-box-width) / 1px)) / 2
+$what-box-rotated-width: 424px; // sqrt( 2 * ($what-box-width * $what-box-width) / 1px);
+$what-detail-max-width: $what-box-rotated-width * 3;
 
 /********************
  *  FONT PATH
@@ -12,6 +16,12 @@ $font-path: '../fonts/';
 $blog-title: grey;
 $blog-links: grey;
 
-
-
-
+/********************
+ *  COLORS
+ *******************/
+$white: #eee;
+$grey: #394249;
+$darkblue: #0083c3;
+$blue: #48b7e5;
+$lightblue: #addef5;
+$almost-white-blue: #eaf6fc;

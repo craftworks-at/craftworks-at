@@ -1,5 +1,5 @@
-<div>
-    <div class="section-how__what what-big-data">
+<div class="section-what__container">
+    <div class="section-what__what what-big-data">
         <h2>big data</h2>
         <ul>
             <li>Schnittstellen/API</li>
@@ -10,7 +10,7 @@
         </ul>
     </div>
 
-    <div class="section-how__what what-development">
+    <div class="section-what__what what-development">
         <h2>development</h2>
         <ul>
             <li>Produktionsplanungssoftware</li>
@@ -22,7 +22,7 @@
         </ul>
     </div>
 
-    <div class="section-how__what what-consulting">
+    <div class="section-what__what what-consulting">
         <h2>consulting</h2>
         <ul>
             <li>Performance</li>
@@ -35,40 +35,55 @@
     </div>
 </div>
 
-<div>
-    <div class="section-how__detail what-big-data">
-        <h3>kunde1</h3>
-        <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
-        <ol>
-            <li>automatischer datenabgleich</li>
-            <li>automatische Auswertung</li>
-            <li>Anbindung an unterschiedliche APIs/Schnittstellen</li>
-            <li>Echtzeit</li>
-        </ol>
-        <img src="" />
+<div class="swiper-container section-what__swiper">
+    <div class="swiper-wrapper">
+        <div class="section-what__detail what-big-data swiper-slide">
+            <h3>kunde1</h3>
+            <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
+            <ol>
+                <li>automatischer datenabgleich</li>
+                <li>automatische Auswertung</li>
+                <li>Anbindung an unterschiedliche APIs/Schnittstellen</li>
+                <li>Echtzeit</li>
+            </ol>
+            <img src="" />
+        </div>
+
+        <div class="section-what__detail what-development swiper-slide">
+            <h3>kunde2</h3>
+            <cite>Dank foresight habe ich jederzeit einen genauen Überblick über den aktuellen Produktionsstand und reduziere Zeit und Kosten durch geringeren Verwaltungsaufwand.</cite>
+            <ol>
+                <li>intelligentes Zeitmanagement</li>
+                <li>Echtzeit Produktionsüberblick</li>
+                <li>Workflow-Automatisierung</li>
+                <li>an Funktion angepasste Informationsaufbereitung</li>
+            </ol>
+            <img src="" />
+        </div>
+
+        <div class="section-what__detail what-consulting swiper-slide">
+            <h3>kunde3</h3>
+            <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
+            <ol>
+                <li>DOM-Manipulationsoptimierung</li>
+                <li>Softwarearchitekturberatung</li>
+                <li>Entwicklungsprozess auf gitflow-Basis</li>
+            </ol>
+            <img src="" />
+        </div>
     </div>
 
-    <div class="section-how__detail what-development">
-        <h3>kunde2</h3>
-        <cite>Dank foresight habe ich jederzeit einen genauen Überblick über den aktuellen Produktionsstand und reduziere Zeit und Kosten durch geringeren Verwaltungsaufwand.</cite>
-        <ol>
-            <li>intelligentes Zeitmanagement</li>
-            <li>Echtzeit Produktionsüberblick</li>
-            <li>Workflow-Automatisierung</li>
-            <li>an Funktion angepasste Informationsaufbereitung</li>
-        </ol>
-        <img src="" />
-    </div>
-
-    <div class="section-how__detail what-consulting">
-        <h3>kunde3</h3>
-        <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
-        <ol>
-            <li>DOM-Manipulationsoptimierung</li>
-            <li>Softwarearchitekturberatung</li>
-            <li>Entwicklungsprozess auf gitflow-Basis</li>
-        </ol>
-        <img src="" />
-    </div>
-
+    <div class="swiper-pagination"></div>
 </div>
+
+<!-- Initialize Swiper -->
+<script>
+    (function(Swiper) {
+        new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 5000,
+            loop: true
+        });
+    })(window.Swiper);
+</script>

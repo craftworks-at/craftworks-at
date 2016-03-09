@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.4",
-    "material-design-lite": "^1.0.6"
+    "material-design-lite": "^1.0.6",
+    "swiper": "^3.3.1"
   }
 }
