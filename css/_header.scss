@@ -1,8 +1,8 @@
 
 header.header {
 
-  height: 80px;
-  margin-top: 20px;
+  background-color: $white;
+  padding-top: 3em;
 
   .container--flex {
     justify-content: flex-end;
@@ -36,6 +36,14 @@ header.header {
       .header-nav--list-link {
         text-decoration: none;
         color: $text-color-primary;
+        font-weight: 200;
+        font-size: 15px;
+
+        &:hover {
+          text-decoration: underline;
+          font-weight: 400;
+        }
+
       }
     }
   }
