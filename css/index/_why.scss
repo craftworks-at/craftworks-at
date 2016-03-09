@@ -3,6 +3,18 @@
   // we do not want to override padding left and right
   padding-top: 4em;
   padding-bottom: 5em;
+
+  &::before {
+    content: "";
+    background-color: $white;
+    position: absolute;
+    width: $max-width * 1.5;
+    height: $max-width * 1.5;
+    z-index: -1;
+    transform: translateX(-50%) rotate(45deg);
+    left: 50%;
+    top: -1160px;
+  }
 }
 
 .why-teaser {

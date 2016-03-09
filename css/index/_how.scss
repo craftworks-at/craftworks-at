@@ -1,0 +1,56 @@
+
+.section-how.mdl-grid.mdl-grid--no-spacing {
+  padding-top: 6em;
+  padding-bottom: 3em;
+}
+
+.how-title {
+  font-weight: 300;
+  //margin-left: 6em;
+}
+
+.how-progress {
+  margin-top: 2em;
+  flex: 1;
+  display: flex;
+  margin-left: 2em;
+
+  .how-progress--step {
+    border-top: 2px solid $darkblue;
+    flex: 1;
+    position: relative;
+    padding: 0 1em;
+    z-index: -2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      background: $background-color;
+      border: 2px solid $darkblue;
+      transform: translateX(-50%) translateY(-55%);
+    }
+
+    &:first-child {
+      &::before {
+        background-color: $darkblue;
+      }
+    }
+
+    .how-progress--step-title {
+      margin-top: 1.6em;
+      font-weight: 400;
+    }
+
+    .how-progress--step-text {
+      color: $grey;
+    }
+
+  }
+}
+
+
