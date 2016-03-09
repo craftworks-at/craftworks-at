@@ -1,0 +1,42 @@
+
+header.header {
+
+  height: 80px;
+  margin-top: 20px;
+
+  .container--flex {
+    justify-content: flex-end;
+  }
+
+  .header-logo {
+
+    .header-logo--link {
+      display: block;
+      margin-bottom: 0.5em;
+      float: right;
+      width: 15em;
+    }
+
+    .header-logo--img {
+      width: 100%;
+    }
+  }
+
+  nav.header-nav {
+    .header-nav--list {
+      display: inline-block;
+      padding: 0;
+
+      .header-nav--list-item {
+        display: inline-block;
+        float: right;
+        margin-left: 1em;
+      }
+
+      .header-nav--list-link {
+        text-decoration: none;
+        color: $text-color-primary;
+      }
+    }
+  }
+}
