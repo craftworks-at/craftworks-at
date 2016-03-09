@@ -51,7 +51,7 @@
   }
 }
 
-@media all and (min-width: $what-box-rotated-width * 2) and (max-width: $what-box-rotated-width * 3) {
+@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
   .section-what__what:last-child {
     transform: translateY(-$what-box-rotated-width/2);
   }

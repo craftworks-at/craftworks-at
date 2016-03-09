@@ -4,10 +4,11 @@
  *******************/
 
 $max-width: 1000px;
-$what-box-width: 300px;
-$what-box-margin: 63px; // ($what-box-width - sqrt( 2 * ($what-box-width * $what-box-width) / 1px)) / 2
-$what-box-rotated-width: 424px; // sqrt( 2 * ($what-box-width * $what-box-width) / 1px);
-$what-detail-max-width: $what-box-rotated-width * 3;
+$what-box-amount: 3;
+$what-box-width: 235px; // Math.sqrt(Math.pow($max-width/$what-box-amount, 2)/2)
+$what-box-rotated-width: 332px; // Math.sqrt(2*Math.pow($what-box-width, 2))
+$what-box-margin: ($what-box-rotated-width - $what-box-width) / 2;
+$what-detail-max-width: $what-box-rotated-width * $what-box-amount;
 
 /********************
  *  Colors
