@@ -6,11 +6,11 @@
 
   &::before {
     content: "";
-    background-color: $white;
+    background-color: $background-white;
     position: absolute;
     width: $max-width * 1.5;
     height: $max-width * 1.5;
-    z-index: -1;
+    z-index: 1;
     transform: translateX(-50%) rotate(45deg);
     left: 50%;
     top: -1160px;
@@ -20,6 +20,7 @@
     text-align: center;
     font-weight: 200;
     line-height: 76px;
+    z-index: 2;
   }
 
   @include respond-to(mobile) {

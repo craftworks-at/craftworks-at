@@ -1,19 +1,21 @@
-.section-what__container {
+.section-what--container {
+  margin-top: 2em;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.section-what__what {
+.section-what--what {
   width: $what-box-width;
   height: $what-box-width;
   justify-content: center;
-  display: flex;
-  align-items: center;
+  text-align: center;
   position: relative;
-  flex-direction: column;
   margin: $what-box-margin;
+  padding-top: $what-box-margin * 1.5;
+  background-repeat: no-repeat;
+  background-position: center 1.6em;
 
   color: $white;
 
@@ -29,15 +31,27 @@
     transform: rotate(45deg);
   }
 
-  &.what-big-data::before {
-    background-color: $lightblue;
+  &.what-big-data {
+    background-image: url('../img/icons/bigdata.svg');
+
+    color: $grey;
+    &::before {
+      background-color: $lightblue;
+    }
   }
-  &.what-consulting::before {
-    background-color: $blue;
+  &.what-development {
+    background-image: url('../img/icons/development.svg');
+    &::before {
+      background-color: $blue;
+    }
   }
-  &.what-development::before {
-    background-color: $darkblue;
+  &.what-consulting {
+    background-image: url('../img/icons/rocket.png');
+    &::before {
+      background-color: $darkblue;
+    }
   }
+
 
   ul, ol {
     list-style: none;
@@ -51,21 +65,25 @@
   }
 }
 
-.section-what__title {
-  font-size: $what-title-size;
+.section-what--title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  margin: 0.6em 0 0;
 }
 
+
 @media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
-  .section-what__what:last-child {
+  .section-what--what:last-child {
     transform: translateY(-$what-box-rotated-width/2);
   }
 }
 
-.section-what__swiper {
+.section-what--swiper {
   width: 100%;
   max-width: $what-detail-max-width;
   overflow: hidden;
 }
 
-.section-what__detail {
+.section-what--detail {
 }

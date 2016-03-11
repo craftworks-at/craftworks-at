@@ -10,17 +10,6 @@
     padding-top: 1.5em;
   }
 
-  .how-title {
-    font-weight: 300;
-    margin-left: 1.4em;
-    font-size: 29px;
-
-    @include respond-to(mobile) {
-      font-size: 20px;
-    }
-
-  }
-
   .how-progress {
     margin-top: 2em;
     flex: 1;
@@ -29,11 +18,10 @@
     flex-wrap: wrap;
 
     .how-progress--step {
-      border-top: 2px solid $darkblue;
+      border-top: 1px solid $darkblue;
       flex: 1;
       position: relative;
       padding: 0 1em;
-      z-index: -2;
 
       @include respond-to(tablet) {
         flex: 1 25%;
@@ -51,6 +39,10 @@
         background: $background-color;
         border: 2px solid $darkblue;
         transform: translateX(-50%) translateY(-55%);
+        
+        transition-property: background-color;
+        transition-duration: 1s;
+        
       }
 
       &:first-child {
@@ -61,11 +53,26 @@
 
       .how-progress--step-title {
         margin-top: 1.6em;
-        font-weight: 400;
+        font-weight: 500;
+        font-size: 16px;
+        color: $grey;
+        margin-bottom: 0.3em;
       }
 
       .how-progress--step-text {
         color: $grey;
+        opacity: 0.7;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+      }
+
+      &:hover {
+        .how-progress--step-text {
+          opacity: 1;
+        }
+        &::before {
+          background-color: $darkblue;
+        }
       }
     }
   }

@@ -14,11 +14,12 @@ $what-detail-max-width: $what-box-rotated-width * $what-box-amount;
  *  Colors
  *******************/
 $background-color: rgb(235,235,235);
+$background-white: rgb(250, 250, 250);
 $white: rgb(245,245,245);
 $grey: #394249;
-$darkblue: #0083c3;
-$blue: #48b7e5;
-$lightblue: #addef5;
+$darkblue: #0089d2;
+$blue: #44b6e9;
+$lightblue: #abddf8;
 $almost-white-blue: #eaf6fc;
 
 /********************
@@ -27,5 +28,3 @@ $almost-white-blue: #eaf6fc;
 $font-path: '../fonts/';
 $blog-title: grey;
 $blog-links: grey;
-
-$what-title-size: 30px;
