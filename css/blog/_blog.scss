@@ -1,0 +1,25 @@
+
+/* blog */
+
+.blog {
+  .blog-posts .mdl-card h3 a {
+    text-decoration: none;
+    color: $blog-title;
+  }
+
+  .blog-posts .mdl-card__supporting-text {
+    text-align: left;
+  }
+
+  .blog-index {
+    height: 200px;
+    ul {
+      list-style-type: none;
+      text-align: left;
+      a {
+        text-decoration: none;
+        color: $blog-links;
+      }
+    }
+  }
+}

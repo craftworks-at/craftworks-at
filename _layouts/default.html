@@ -12,46 +12,27 @@
     <meta name="title" content="{{ site.title }}">
     <title>{{ site.title }}</title>
 
-    <link rel="canonical" href="http://craftworks.at/"/>
+    <link rel="canonical" href="https://craftworks.at/"/>
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/material-design-lite/dist/material.min.js"></script>
+    <script src="/node_modules/swiper/dist/js/swiper.min.js"></script>
 
-    <link href="/node_modules/material-design-lite/dist/material.blue_grey-indigo.min.css" rel="stylesheet"/>
-
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/node_modules/swiper/dist/css/swiper.min.css">
 
     <link href="/css/app.css" rel="stylesheet">
     {% include favicon.html %}
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header mdl-layout__header--waterfall mdl-layout__header--waterfall-hide-top">
-            <div class="mdl-layout__header-row header__top">
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Title -->
-                <h2 class="mdl-typography--font-light mdl-color-text--primary-dark">{{site.description}}</h2>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-            </div>
-            <div class="mdl-layout__header-row header__main">
+    <div class="mdl-layout">
 
-                <!-- Title -->
-                <span class="mdl-layout-title">
-                    <a href="/"><img class="img" src="/img/logo.png" height="32px"/></a>
-                </span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation -->
-                {% include menu.html %}
-            </div>
-        </header>
-        <main class="mdl-layout__content">
+        {% include header.html %}
+
+        <main class="craftworks-content mdl-layout__content">
             {{content}}
-            {% include footer.html %}
         </main>
+        {% include footer.html %}
     </div>
 </body>
 </html>

@@ -1,9 +1,30 @@
+
+/********************
+ *  WIDTHS
+ *******************/
+
+$max-width: 1000px;
+$what-box-amount: 3;
+$what-box-width: 235px; // Math.sqrt(Math.pow($max-width/$what-box-amount, 2)/2)
+$what-box-rotated-width: 332px; // Math.sqrt(2*Math.pow($what-box-width, 2))
+$what-box-margin: ($what-box-rotated-width - $what-box-width) / 2;
+$what-detail-max-width: $what-box-rotated-width * $what-box-amount;
+
+/********************
+ *  Colors
+ *******************/
+$background-color: rgb(235,235,235);
+$background-white: rgb(250, 250, 250);
+$white: rgb(245,245,245);
+$grey: #394249;
+$darkblue: #0089d2;
+$blue: #44b6e9;
+$lightblue: #abddf8;
+$almost-white-blue: #eaf6fc;
+
 /********************
  *  FONT PATH
  *******************/
 $font-path: '../fonts/';
 $blog-title: grey;
 $blog-links: grey;
-
-
-

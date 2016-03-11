@@ -1,0 +1,99 @@
+.section-what--container {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-what--what {
+  width: $what-box-width;
+  height: $what-box-width;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin: $what-box-margin;
+  background-repeat: no-repeat;
+  background-position: center 1.6em;
+
+  color: $white;
+
+  &::before {
+    content: "";
+    background-color: #ddd;
+    position: absolute;
+    width: $what-box-width;
+    height: $what-box-width;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  &.what-big-data {
+    background-image: url('../img/icons/bigdata.svg');
+
+    color: $grey;
+    &::before {
+      background-color: $lightblue;
+    }
+  }
+  &.what-development {
+    background-image: url('../img/icons/development.svg');
+
+    &::before {
+      background-color: $blue;
+    }
+  }
+  &.what-consulting {
+    background-image: url('../img/icons/rocket.png');
+    &::before {
+      background-color: $darkblue;
+    }
+  }
+
+  .section-what--title {
+    // this is actual a padding of the box (bot not assignable to the box cause of resonsive behaviour)
+    padding-top: $what-box-margin * 1.5;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    margin: 0.6em 0 0;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  .section-what--list {
+    text-align: center;
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  &:hover {
+    .section-what--list {
+      opacity: 1;
+    }
+    .section-what--title {
+      opacity: 0.7;
+    }
+  }
+
+}
+
+
+@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
+  .section-what--what:last-child {
+    transform: translateY(-$what-box-rotated-width/2);
+  }
+}
+
+.section-what--swiper {
+  width: 100%;
+  max-width: $what-detail-max-width;
+  overflow: hidden;
+}
+
+.section-what--detail {
+}
