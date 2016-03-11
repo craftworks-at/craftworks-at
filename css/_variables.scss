@@ -4,6 +4,11 @@
  *******************/
 
 $max-width: 1000px;
+$what-box-amount: 3;
+$what-box-width: 235px; // Math.sqrt(Math.pow($max-width/$what-box-amount, 2)/2)
+$what-box-rotated-width: 332px; // Math.sqrt(2*Math.pow($what-box-width, 2))
+$what-box-margin: ($what-box-rotated-width - $what-box-width) / 2;
+$what-detail-max-width: $what-box-rotated-width * $what-box-amount;
 
 /********************
  *  Colors
@@ -23,6 +28,17 @@ $font-path: '../fonts/';
 $blog-title: grey;
 $blog-links: grey;
 
+/********************
+ *  COLORS
+ *******************/
+$white: #eee;
+$grey: #394249;
+$darkblue: #0083c3;
+$blue: #48b7e5;
+$lightblue: #addef5;
+$almost-white-blue: #eaf6fc;
 
-
-
+/********************
+ *  COLORS
+ *******************/
+$what-title-size: 30px;

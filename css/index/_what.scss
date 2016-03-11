@@ -1,0 +1,71 @@
+.section-what__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-what__what {
+  width: $what-box-width;
+  height: $what-box-width;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  margin: $what-box-margin;
+
+  color: $white;
+
+  &::before {
+    content: "";
+    background-color: #ddd;
+    position: absolute;
+    width: $what-box-width;
+    height: $what-box-width;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  &.what-big-data::before {
+    background-color: $lightblue;
+  }
+  &.what-consulting::before {
+    background-color: $blue;
+  }
+  &.what-development::before {
+    background-color: $darkblue;
+  }
+
+  ul, ol {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.section-what__title {
+  font-size: $what-title-size;
+}
+
+@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
+  .section-what__what:last-child {
+    transform: translateY(-$what-box-rotated-width/2);
+  }
+}
+
+.section-what__swiper {
+  width: 100%;
+  max-width: $what-detail-max-width;
+  overflow: hidden;
+}
+
+.section-what__detail {
+}
