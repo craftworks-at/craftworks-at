@@ -34,10 +34,15 @@
   }
 
   @include respond-to(tablet) {
-    padding-top: 3em;
+    //padding-top: 3em;
     &::before {
       top: -1220px;
     }
+
+    .why-teaser {
+      font-size: 45px;
+    }
+
   }
 
 }
