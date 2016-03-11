@@ -13,12 +13,32 @@
     z-index: -1;
     transform: translateX(-50%) rotate(45deg);
     left: 50%;
-    top: -1100px;
+    top: -1160px;
   }
+
+  .why-teaser {
+    text-align: center;
+    font-weight: 200;
+    line-height: 76px;
+  }
+
+  @include respond-to(mobile) {
+    padding-top: 2em;
+    &::before {
+      top: -1500px;
+    }
+    .why-teaser {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    padding-top: 3em;
+    &::before {
+      top: -1220px;
+    }
+  }
+
 }
 
-.why-teaser {
-  text-align: center;
-  font-weight: 200;
-  line-height: 76px;
-}

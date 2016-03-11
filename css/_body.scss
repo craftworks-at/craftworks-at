@@ -1,4 +1,8 @@
 
 body {
   background-color: $background-color;
+
+  .craftworks-content {
+    overflow: visible;
+  }
 }

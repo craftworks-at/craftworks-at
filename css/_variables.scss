@@ -14,7 +14,7 @@ $what-detail-max-width: $what-box-rotated-width * $what-box-amount;
  *  Colors
  *******************/
 $background-color: rgb(235,235,235);
-$white: #fff;
+$white: rgb(245,245,245);
 $grey: #394249;
 $darkblue: #0083c3;
 $blue: #48b7e5;
@@ -28,17 +28,4 @@ $font-path: '../fonts/';
 $blog-title: grey;
 $blog-links: grey;
 
-/********************
- *  COLORS
- *******************/
-$white: #eee;
-$grey: #394249;
-$darkblue: #0083c3;
-$blue: #48b7e5;
-$lightblue: #addef5;
-$almost-white-blue: #eaf6fc;
-
-/********************
- *  COLORS
- *******************/
 $what-title-size: 30px;
