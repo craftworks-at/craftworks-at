@@ -2,54 +2,79 @@
 .section-how.mdl-grid.mdl-grid--no-spacing {
   padding-top: 6em;
   padding-bottom: 3em;
-}
 
-.how-title {
-  font-weight: 300;
-  //margin-left: 6em;
-}
+  @include respond-to(tablet) {
+    padding-top: 3.5em;
+  }
+  @include respond-to(mobile) {
+    padding-top: 1.5em;
+  }
 
-.how-progress {
-  margin-top: 2em;
-  flex: 1;
-  display: flex;
-  margin-left: 2em;
-
-  .how-progress--step {
-    border-top: 2px solid $darkblue;
+  .how-progress {
+    margin-top: 2em;
     flex: 1;
-    position: relative;
-    padding: 0 1em;
-    z-index: -2;
+    display: flex;
+    margin-left: 2em;
+    flex-wrap: wrap;
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 1em;
-      height: 1em;
-      border-radius: 50%;
-      top: 0;
-      left: 0;
-      background: $background-color;
-      border: 2px solid $darkblue;
-      transform: translateX(-50%) translateY(-55%);
-    }
+    .how-progress--step {
+      border-top: 1px solid $darkblue;
+      flex: 1;
+      position: relative;
+      padding: 0 1em;
 
-    &:first-child {
+      @include respond-to(tablet) {
+        flex: 1 25%;
+      }
+
+      /** dots **/
       &::before {
-        background-color: $darkblue;
+        content: "";
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        background: $background-color;
+        border: 2px solid $darkblue;
+        transform: translateX(-50%) translateY(-55%);
+        
+        transition-property: background-color;
+        transition-duration: 1s;
+        
+      }
+
+      &:first-child {
+        &::before {
+          background-color: $darkblue;
+        }
+      }
+
+      .how-progress--step-title {
+        margin-top: 1.6em;
+        font-weight: 500;
+        font-size: 16px;
+        color: $grey;
+        margin-bottom: 0.3em;
+      }
+
+      .how-progress--step-text {
+        color: $grey;
+        opacity: 0.7;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+      }
+
+      &:hover {
+        .how-progress--step-text {
+          opacity: 1;
+        }
+        &::before {
+          background-color: $darkblue;
+        }
       }
     }
-
-    .how-progress--step-title {
-      margin-top: 1.6em;
-      font-weight: 400;
-    }
-
-    .how-progress--step-text {
-      color: $grey;
-    }
-
   }
 }
 

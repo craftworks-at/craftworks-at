@@ -1,19 +1,20 @@
-.section-what__container {
+.section-what--container {
+  margin-top: 2em;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.section-what__what {
+.section-what--what {
   width: $what-box-width;
   height: $what-box-width;
   justify-content: center;
-  display: flex;
-  align-items: center;
+  text-align: center;
   position: relative;
-  flex-direction: column;
   margin: $what-box-margin;
+  background-repeat: no-repeat;
+  background-position: center 1.6em;
 
   color: $white;
 
@@ -29,43 +30,70 @@
     transform: rotate(45deg);
   }
 
-  &.what-big-data::before {
-    background-color: $lightblue;
-  }
-  &.what-consulting::before {
-    background-color: $blue;
-  }
-  &.what-development::before {
-    background-color: $darkblue;
-  }
+  &.what-big-data {
+    background-image: url('../img/icons/bigdata.svg');
 
-  ul, ol {
-    list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    li {
-      margin: 0;
-      padding: 0;
+    color: $grey;
+    &::before {
+      background-color: $lightblue;
     }
   }
+  &.what-development {
+    background-image: url('../img/icons/development.svg');
+
+    &::before {
+      background-color: $blue;
+    }
+  }
+  &.what-consulting {
+    background-image: url('../img/icons/rocket.png');
+    &::before {
+      background-color: $darkblue;
+    }
+  }
+
+  .section-what--title {
+    // this is actual a padding of the box (bot not assignable to the box cause of resonsive behaviour)
+    padding-top: $what-box-margin * 1.5;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    margin: 0.6em 0 0;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  .section-what--list {
+    text-align: center;
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  &:hover {
+    .section-what--list {
+      opacity: 1;
+    }
+    .section-what--title {
+      opacity: 0.7;
+    }
+  }
+
 }
 
-.section-what__title {
-  font-size: $what-title-size;
-}
 
 @media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
-  .section-what__what:last-child {
+  .section-what--what:last-child {
     transform: translateY(-$what-box-rotated-width/2);
   }
 }
 
-.section-what__swiper {
+.section-what--swiper {
   width: 100%;
   max-width: $what-detail-max-width;
   overflow: hidden;
 }
 
-.section-what__detail {
+.section-what--detail {
 }
