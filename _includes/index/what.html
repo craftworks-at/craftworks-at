@@ -6,7 +6,7 @@
 </div>
 
 <div class="section-what--container">
-    <div class="section-what--what what-big-data">
+    <div class="section-what--what what-big-data" data-slide-index="1">
         <h2 class="section-what--title">big data</h2>
         <ul class="section-what--list">
             <li>predictive analytics</li>
@@ -22,7 +22,7 @@
         </ul>-->
     </div>
 
-    <div class="section-what--what what-development">
+    <div class="section-what--what what-development" data-slide-index="2">
         <h2 class="section-what--title">entwicklung</h2>
         <ul class="section-what--list">
             <li>web applications</li>
@@ -39,7 +39,7 @@
         </ul>-->
     </div>
 
-    <div class="section-what--what what-consulting">
+    <div class="section-what--what what-consulting" data-slide-index="3">
         <h2 class="section-what--title">consulting</h2>
         <ul class="section-what--list">
             <li>performance & scaling</li>
@@ -60,54 +60,55 @@
 <div class="section-what--swiper-container">
     <div class="swiper-container section-what--swiper">
         <div class="swiper-wrapper">
-            <div class="section-what--detail what-big-data swiper-slide">
-                <h3>kunde1</h3>
-                <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
-                <ol>
-                    <li>automatischer datenabgleich</li>
-                    <li>automatische Auswertung</li>
-                    <li>Anbindung an unterschiedliche APIs/Schnittstellen</li>
-                    <li>Echtzeit</li>
-                </ol>
-                <img src="" />
+            <div class="swiper-slide">
+                <div class="section-what--detail what-big-data">
+                    <!--<h3>kunde1</h3>-->
+                    <cite class="section-what--detail-cite">
+                        Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.
+                    </cite>
+                    <ol>
+                        <li>automatischer datenabgleich</li>
+                        <li>automatische Auswertung</li>
+                        <li>Anbindung an unterschiedliche APIs/Schnittstellen</li>
+                        <li>Echtzeit</li>
+                    </ol>
+                    <img src="" />
+                </div>
             </div>
 
-            <div class="section-what--detail what-development swiper-slide">
-                <h3>kunde2</h3>
-                <cite>Dank foresight habe ich jederzeit einen genauen Überblick über den aktuellen Produktionsstand und reduziere Zeit und Kosten durch geringeren Verwaltungsaufwand.</cite>
-                <ol>
-                    <li>intelligentes Zeitmanagement</li>
-                    <li>Echtzeit Produktionsüberblick</li>
-                    <li>Workflow-Automatisierung</li>
-                    <li>an Funktion angepasste Informationsaufbereitung</li>
-                </ol>
-                <img src="" />
+            <div class="swiper-slide">
+                <div class="section-what--detail what-development">
+                    <!--<h3>kunde2</h3>-->
+                    <cite class="section-what--detail-cite">
+                        Dank foresight habe ich jederzeit einen genauen Überblick über den aktuellen Produktionsstand und reduziere Zeit und Kosten durch geringeren Verwaltungsaufwand.
+                    </cite>
+                    <ol>
+                        <li>intelligentes Zeitmanagement</li>
+                        <li>Echtzeit Produktionsüberblick</li>
+                        <li>Workflow-Automatisierung</li>
+                        <li>an Funktion angepasste Informationsaufbereitung</li>
+                    </ol>
+                    <img src="" />
+                </div>
             </div>
 
-            <div class="section-what--detail what-consulting swiper-slide">
-                <h3>kunde3</h3>
-                <cite>Dank der auf unsere Bedürfnisse angepassten BigData-Lösung von craftworks, können wir unseren Kunden aus einer Vielzahl von Quellen, die Informationen zur Verfügung stellen, die wirklich interessant sind. Dafür stehe ich mit meinem Namen.</cite>
-                <ol>
-                    <li>DOM-Manipulationsoptimierung</li>
-                    <li>Softwarearchitekturberatung</li>
-                    <li>Entwicklungsprozess auf gitflow-Basis</li>
-                </ol>
-                <img src="" />
+            <div class="swiper-slide">
+                <div class="section-what--detail what-consulting">
+                    <!--<h3>kunde3</h3>-->
+                    <cite class="section-what--detail-cite">
+                        Durch die riesigen Datenmengen, die unsere Plattform in Echtzeit verarbeitete, stießen wir immer wieder an unsere Grenzen. Gemeinsam mit craftworks haben eine Microservice-Architektur entworfen, um noch größere Datenmengen zu verarbeiten und das System ausfallsicherer zu machen. Ihre Expertise hat uns nicht nur im Backend sondern auch bei Performance-Problemen im Frontend sehr geholfen.
+                    </cite>
+                    <ol>
+                        <li>DOM-Manipulationsoptimierung</li>
+                        <li>Softwarearchitekturberatung</li>
+                        <li>Entwicklungsprozess auf gitflow-Basis</li>
+                    </ol>
+                    <img src="" />
+                </div>
             </div>
         </div>
 
-        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
 </div>
-
-<!-- Initialize Swiper -->
-<script>
-    (function(Swiper) {
-        new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            autoplay: 5000,
-            loop: true
-        });
-    })(window.Swiper);
-</script>

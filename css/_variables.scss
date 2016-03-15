@@ -6,6 +6,8 @@
 $max-width: 1000px;
 $what-box-amount: 3;
 $what-box-width: 235px; // Math.sqrt(Math.pow($max-width/$what-box-amount, 2)/2)
+$what-box-width-active: $what-box-width * 1.25;
+$what-box-position-active: -(($what-box-width * 1.25) - $what-box-width) / 2;
 $what-box-rotated-width: 332px; // Math.sqrt(2*Math.pow($what-box-width, 2))
 $what-box-margin: ($what-box-rotated-width - $what-box-width) / 2;
 $what-detail-max-width: $what-box-rotated-width * $what-box-amount;
