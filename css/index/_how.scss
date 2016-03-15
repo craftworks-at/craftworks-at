@@ -45,11 +45,16 @@
         
       }
 
-      &:first-child {
-        &::before {
-          background-color: $darkblue;
+      &:last-child {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100em;
+          top: -1px;
+          border-top: 1px solid $darkblue;
         }
       }
+
 
       .how-progress--step-title {
         margin-top: 1.6em;

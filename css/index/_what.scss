@@ -1,9 +1,26 @@
+
+@mixin white-bg() {
+  content: "";
+  background-color: $background-white;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: -100%;
+}
+
 .section-what--container {
-  margin-top: 2em;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+
+  &::before {
+    @include white-bg();
+    top: $what-box-rotated-width / 2;
+  }
 }
 
 .section-what--what {
@@ -28,6 +45,22 @@
     top: 0;
     left: 0;
     transform: rotate(45deg);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &.active,
+  &:hover {
+    .section-what--list {
+      opacity: 1;
+    }
+    .section-what--title {
+      opacity: 0.9;
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
   }
 
   &.what-big-data {
@@ -71,15 +104,6 @@
     transition-duration: 0.5s;
   }
 
-  &:hover {
-    .section-what--list {
-      opacity: 1;
-    }
-    .section-what--title {
-      opacity: 0.7;
-    }
-  }
-
 }
 
 
@@ -89,9 +113,16 @@
   }
 }
 
+.section-what--swiper-container {
+  position: relative;
+  &::before {
+    @include white-bg();
+  }
+}
 .section-what--swiper {
   width: 100%;
   max-width: $what-detail-max-width;
+  position: relative;
   overflow: hidden;
 }
 
