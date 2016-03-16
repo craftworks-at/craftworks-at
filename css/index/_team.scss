@@ -1,0 +1,29 @@
+.section-team {
+  position: relative;
+
+  &::before {
+    @include white-bg();
+    top: 0;
+  }
+
+  .team {
+    text-align: center;
+    img {
+      width: 100%;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  }
+
+  .team__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .team__description {
+    flex: 1 1 0;
+  }
+}
