@@ -14,14 +14,14 @@
 
     <link rel="canonical" href="https://craftworks.at/"/>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+    <script src="{{ site.baseurl }}node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}node_modules/swiper/dist/js/swiper.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}node_modules/swiper/dist/css/swiper.min.css">
 
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}css/app.css" rel="stylesheet">
     {% include favicon.html %}
 </head>
 <body>
@@ -34,6 +34,6 @@
         </main>
         {% include footer.html %}
     </div>
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

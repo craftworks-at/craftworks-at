@@ -10,7 +10,7 @@ title:       "craftworks"
 keywords:    "craftworks, gmbh, company, software "
 description: "craftworks - think modern, think simple, think software"
 author: "craftworks GmbH"
-baseurl: "/"
+baseurl: ""
 google_analytics_key: "UA-71534751-1"
 
 sass:
