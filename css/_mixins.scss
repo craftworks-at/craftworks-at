@@ -1,0 +1,17 @@
+
+@mixin white-bg() {
+  content: "";
+  background-color: $background-white;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: -100%;
+}
+
+@mixin dark-bg() {
+  @include white-bg();
+  background-color: $background-grey;
+}
+

@@ -3,12 +3,15 @@
 
 // mixins
 @import "functions";
+@import "mixins";
 
-// global variables
+// mdl variables
+@import "../node_modules/material-design-lite/src/variables";
+
+// craftwork variables
 @import "variables";
 
 // mdl
-@import "../node_modules/material-design-lite/src/variables";
 @import "../node_modules/material-design-lite/src/resets/resets";
 @import "../node_modules/material-design-lite/src/layout/layout";
 @import "../node_modules/material-design-lite/src/mixins";

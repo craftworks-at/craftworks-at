@@ -1,10 +1,24 @@
 .section-contact {
+  position: relative;
 
-  .contact {
-    float: left;
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    address {
+      flex: 0 0 auto;
+      min-width: 25%;
+    }
+    iframe {
+      flex: 1;
+    }
+
+    @include respond-to(mobile) {
+      address, iframe {
+        flex: 1 100%;
+      }
+    }
+
   }
 
-  .map {
-    float: right;
-  }
 }
