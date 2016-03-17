@@ -64,6 +64,48 @@ var contactForm = {
   }
 };
 
+var smoothScroll = {
+
+  init: function(options) {
+    $('body').on('click', options.anchorScroll, this.scrollToAnchor);
+
+    // scroll hash
+    setTimeout(function() {
+      this.scrollToAnchor(window.location.hash);
+    }.bind(this), 500);
+  },
+
+  scrollToAnchor: function(href) {
+    href = typeof(href) == "string" ? href : $(this).attr('href');
+
+    if (href.indexOf('/') === 0) {
+      href = href.substr(1);
+    }
+
+    // You could easily calculate this dynamically if you prefer
+    var fromTop = 0;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+    // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+    if(href.indexOf('#') === 0) {
+      var $target = $(href);
+
+      // Older browser without pushState might flicker here, as they momentarily
+      // jump to the wrong position (IE < 10)
+      if($target.length) {
+        $('html, body').animate(
+          { scrollTop: $target.offset().top - fromTop },
+          500
+        );
+        if(history && 'pushState' in history) {
+          history.pushState({}, document.title, window.location.pathname + href);
+          return false;
+        }
+      }
+    }
+  }
+};
+
 
 // doc ready
 (function($, Swiper) {
@@ -72,7 +114,10 @@ var contactForm = {
   options.whatSlider      = '.section-what--swiper';
   options.whatCategory    = '.section-what--what';
   options.whatSlideIndex  = '[data-slide-index="__INDEX__"]';
+  options.anchorScroll    = '[data-anchor-scroll]';
 
+  // init smooth scrolling
+  smoothScroll.init(options);
 
   // init sections
   sectionWhat.init(options);

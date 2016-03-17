@@ -1,13 +1,16 @@
 
 .section-how.mdl-grid.mdl-grid--no-spacing {
-  padding-top: 6em;
-  padding-bottom: 3em;
 
-  @include respond-to(tablet) {
-    padding-top: 3.5em;
-  }
-  @include respond-to(mobile) {
-    padding-top: 1.5em;
+  #how {
+    padding-top: 5em;
+    padding-bottom: 1em;
+
+    @include respond-to(tablet) {
+      padding-top: 2.5em;
+    }
+    @include respond-to(mobile) {
+      padding-top: 0.5em;
+    }
   }
 
   .how-progress {

@@ -1,6 +1,14 @@
 .section-team {
   position: relative;
 
+  #team {
+    padding: 5em 0 7em;
+
+    @include respond-to(mobile) {
+      padding: 1em 0;
+    }
+  }
+
   &::before {
     @include white-bg();
     top: 0;
@@ -8,9 +16,10 @@
 
   .team {
     text-align: center;
-    padding-bottom: 3em;
+
     img {
       width: 100%;
+      margin: 2em 0;
     }
   }
 }

@@ -1,3 +1,7 @@
 .page-impressum {
   @extend .page-about;
+
+  .section-impressum {
+    padding-bottom: 20em;
+  }
 }

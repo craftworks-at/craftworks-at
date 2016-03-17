@@ -1,6 +1,14 @@
 .section-contact {
   position: relative;
 
+  #contact {
+    padding: 7em 0;
+
+    @include respond-to(mobile) {
+      padding: 1em 0;
+    }
+  }
+
   .contact-container {
     display: flex;
     flex-wrap: wrap;
