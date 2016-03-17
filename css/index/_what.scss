@@ -206,5 +206,25 @@
 }
 
 @media all and (max-width: $what-box-rotated-width * ($what-box-amount - 1) - $page-padding * 2 + 1px) {
+  .section-what--what:last-child {
+    transform: translateY(-$what-box-rotated-width/2 * $mobile-box-scaling);
+  }
+  .section-what--container {
+    height: $what-box-rotated-width * 1.5 * $mobile-box-scaling;
+  }
 
+  .section-what--container {
+    &::before {
+      top: $what-box-rotated-width / 2 * $mobile-box-scaling;
+    }
+  }
+
+  .section-what--what {
+    width: $what-box-width * $mobile-box-scaling;
+    height: $what-box-width * $mobile-box-scaling;
+    &::before {
+      width: $what-box-width * $mobile-box-scaling;
+      height: $what-box-width * $mobile-box-scaling;
+    }
+  }
 }
