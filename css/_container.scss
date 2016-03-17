@@ -8,6 +8,11 @@
 .container--flex {
   @extend .container;
   display: flex;
+
+}
+.container--flex--column {
+  @extend .container--flex;
+  flex-direction: column;
 }
 
 .mdl-grid.mdl-grid--no-spacing.container {

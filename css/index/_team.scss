@@ -1,0 +1,16 @@
+.section-team {
+  position: relative;
+
+  &::before {
+    @include white-bg();
+    top: 0;
+  }
+
+  .team {
+    text-align: center;
+    padding-bottom: 3em;
+    img {
+      width: 100%;
+    }
+  }
+}
