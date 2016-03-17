@@ -1,11 +1,31 @@
 ---
 ---
 
-// global variables
+// mixins
+@import "functions";
+@import "mixins";
+
+// mdl variables
+@import "../node_modules/material-design-lite/src/variables";
+
+// craftwork variables
 @import "variables";
 
-@import "../_layouts/default";
-@import "../_layouts/blogpost";
-@import "../index2/index";
-@import "../blog/index";
-@import "../test/index";
+// mdl
+@import "../node_modules/material-design-lite/src/resets/resets";
+@import "../node_modules/material-design-lite/src/layout/layout";
+@import "../node_modules/material-design-lite/src/mixins";
+@import "../node_modules/material-design-lite/src/grid/grid";
+@import "../node_modules/material-design-lite/src/typography/typography";
+
+@import "mediaqueries";
+
+@import "body";
+@import "container";
+
+@import "header";
+@import "footer";
+@import "index/index";
+@import "blog/index";
+@import "about/index";
+@import "impressum/index";

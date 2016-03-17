@@ -1,0 +1,203 @@
+
+.section-what--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+
+  &::before {
+    @include white-bg();
+    top: $what-box-rotated-width / 2;
+  }
+}
+
+.section-what--what {
+  width: $what-box-width;
+  height: $what-box-width;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin: $what-box-margin;
+  background-repeat: no-repeat;
+  background-position: center 1.6em;
+  color: $white;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    background-color: #ddd;
+    position: absolute;
+    width: $what-box-width;
+    height: $what-box-width;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    transition-property: transform, width, height, top, left;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &.active,
+  &:hover {
+    .section-what--list {
+      opacity: 1;
+    }
+    .section-what--title {
+      opacity: 0.9;
+    }
+  }
+
+  &.active {
+    &::before {
+      transform: rotate(-45deg);
+      width: $what-box-width-active;
+      height: $what-box-width-active;
+      top: $what-box-position-active;
+      left: $what-box-position-active;
+    }
+  }
+
+  &.what-big-data {
+    background-image: url('../img/icons/bigdata.svg');
+
+    color: $grey;
+    &::before {
+      background-color: $lightblue;
+    }
+  }
+  &.what-development {
+    background-image: url('../img/icons/development.svg');
+
+    &::before {
+      background-color: $blue;
+    }
+  }
+  &.what-consulting {
+    background-image: url('../img/icons/rocket.png');
+    &::before {
+      background-color: $darkblue;
+    }
+  }
+
+  .section-what--title {
+    // this is actual a padding of the box (bot not assignable to the box cause of resonsive behaviour)
+    padding-top: $what-box-margin * 1.5;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    margin: 0.6em 0 0;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  .section-what--list {
+    text-align: center;
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+}
+
+@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
+  .section-what--what:last-child {
+    transform: translateY(-$what-box-rotated-width/2);
+  }
+}
+
+.section-what--swiper-container {
+  position: relative;
+  &::before {
+    @include white-bg();
+  }
+}
+
+.section-what--swiper {
+  width: 100%;
+  max-width: $what-detail-max-width;
+  position: relative;
+  overflow: hidden;
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .section-what--detail {
+    margin: 3em 5em;
+    display: flex;
+    flex-direction: column;
+
+    .section-what--detail-box {
+      display: flex;
+      flex-direction: row;
+      p {
+        flex: 2;
+        span {
+          padding: .2em .6em .3em;
+          font-size: 11px;
+          vertical-align: baseline;
+          text-align: center;
+          color: $grey;
+          background-color: $lightblue;
+          border-radius: 0.25em;
+        }
+      }
+      .section-what--detail-box-image-wrapper {
+        flex:1;
+        margin-left: 15px;
+        max-height: 256px;
+        overflow: hidden;
+      }
+    }
+
+    .section-what--detail-portrait {
+
+      display: flex;
+      flex-direction: row;
+      padding: 1.3em .6em .3em;
+
+      img {
+        max-width: 128px;
+        max-height: 128px;
+        margin-bottom: 15px;
+      }
+
+      .section-what--detail-portrait-list {
+        font-weight: 800;
+      }
+
+      .section-what--detail-box-cite {
+        position: relative;
+        padding: 2em 2em 0em 5em;
+        display: block;
+        font-size: 1.5em;
+        line-height: 1.5em;
+
+        &::before,
+        &::after {
+          position: absolute;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 8em;
+          color: $grey;
+          opacity: 0.7;
+        }
+        &::before {
+          content: "\201C";
+          top: 0.2em;
+          left: 0.1em;
+        }
+        &::after {
+          content: "\201E";
+          right: 0.3em;
+          bottom: 0.3em;
+        }
+      }
+
+    }
+
+  }
+
+}

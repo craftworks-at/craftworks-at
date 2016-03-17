@@ -1,13 +1,123 @@
 /*
- * 
- * newHP
+ *
+ * craftworks.at
  *
  * Copyright (c) 2015 craftworks - https://craftworks.at
  * All rights reserved.
  */
 
-(function($) {
+var sectionWhat = {
+  swiper: null,
+
+  init: function(options) {
+    var that = this;
+
+    // init swiper
+    this.swiper = new Swiper(options.whatSlider, {
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      // autoplay: 5000,
+      initialSlide: 1,
+      loop: false,
+      onSlideChangeStart: function(swiper) {
+        // set category active
+        that.setActive(
+          options,
+          swiper.activeIndex
+        );
+      }
+    });
+
+    // init whatCategory click
+    $(options.whatCategory).on('click', function() {
+      var slideIndex = $(this).data('slide-index');
+      that.setActive(options, slideIndex);
+      that.swiper.slideTo(slideIndex)
+    });
+
+  },
+
+  setActive: function(options, index) {
+    $(options.whatCategory).removeClass('active');
+    var slideCount = $(options.whatCategory).length;
+    $(options.whatCategory + options.whatSlideIndex.replace('__INDEX__', index % slideCount)).addClass('active');
+  }
+
+};
+
+var contactForm = {
+  isValidEmail: function (email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  },
+  clearErrors: function () {
+    $('#emailAlert').remove();
+    $('#feedbackForm .help-block').hide();
+    $('#feedbackForm .form-group').removeClass('has-error');
+  },
+  addError: function ($input) {
+    $input.siblings('.help-block').show();
+    $input.parent('.form-group').addClass('has-error');
+  },
+  addAjaxMessage: function(msg, isError) {
+    $("#contactSubmit").after('<div id="emailAlert" class="alert alert-' + (isError ? 'danger' : 'success') + '" style="margin-top: 5px;">' + $('<div/>').text(msg).html() + '</div>');
+  }
+};
 
 
+// doc ready
+(function($, Swiper) {
 
-})($);
+  var options = {};
+  options.whatSlider      = '.section-what--swiper';
+  options.whatCategory    = '.section-what--what';
+  options.whatSlideIndex  = '[data-slide-index="__INDEX__"]';
+
+
+  // init sections
+  sectionWhat.init(options);
+
+  // init contact form
+  $('#contactSubmit').click(function() {
+    contactForm.clearErrors();
+
+    var hasErrors = false;
+    $('#contactForm input,textarea').each(function() {
+      if (!$(this).val()) {
+        console.log("anderer error");
+        hasErrors = true;
+        contactForm.addError($(this));
+      }
+    });
+    var $email = $('#contactmail');
+    if (!contactForm.isValidEmail($email.val())) {
+      console.log("email error");
+      hasErrors = true;
+      contactForm.addError($email);
+    }
+
+    //if there are any errors return without sending e-mail
+    if (hasErrors) {
+      return false;
+    }
+    var contactData = 'name='+$('#contactname').val()+'&email='+$email.val()+'&message='+$('#contactmessage').val();
+    //send the feedback e-mail
+    $.ajax({
+      type: "POST",
+      url: "lib/contact_mailer.php",
+      data: contactData,
+      success: function(data)
+      {
+        ga('send', 'event', 'button', 'click', 'messageSent');
+        contactForm.addAjaxMessage(data.message, false);
+      },
+      error: function(response)
+      {
+        ga('send', 'event', 'button', 'click', 'messageError');
+        contactForm.addAjaxMessage(response.responseJSON.message, true);
+      }
+    });
+    return false;
+  });
+
+})($, window.Swiper);

@@ -1,0 +1,23 @@
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container--flex {
+  @extend .container;
+  display: flex;
+
+}
+.container--flex--column {
+  @extend .container--flex;
+  flex-direction: column;
+}
+
+.mdl-grid.mdl-grid--no-spacing.container {
+  @extend .container;
+}
+.mdl-grid.mdl-grid--no-spacing.container--flex {
+  @extend .container--flex;
+}

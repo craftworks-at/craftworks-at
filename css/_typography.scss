@@ -1,0 +1,16 @@
+
+html, body, ul, li {
+  font-family: $preferred_font;
+}
+
+
+.section-title {
+  font-weight: 300;
+  margin-left: 1.4em;
+  font-size: 29px;
+
+  @include respond-to(mobile) {
+    font-size: 20px;
+  }
+}
+

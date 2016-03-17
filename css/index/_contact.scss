@@ -1,0 +1,27 @@
+.section-contact {
+  position: relative;
+
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    address {
+      flex: 0 0 auto;
+      min-width: 25%;
+
+      p {
+      }
+    }
+    iframe {
+      flex: 1;
+    }
+
+    @include respond-to(mobile) {
+      address, iframe {
+        flex: 1 100%;
+      }
+    }
+
+  }
+
+}
