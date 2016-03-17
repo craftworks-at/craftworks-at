@@ -11,21 +11,38 @@ var sectionWhat = {
 
   init: function(options) {
     var that = this;
+
     // init swiper
     this.swiper = new Swiper(options.whatSlider, {
       nextButton: '.swiper-button-next',
       prevButton: '.swiper-button-prev',
       // autoplay: 5000,
-      loop: true
+      initialSlide: 1,
+      loop: false,
+      onSlideChangeStart: function(swiper) {
+        // set category active
+        that.setActive(
+          options,
+          swiper.activeIndex
+        );
+      }
     });
 
     // init whatCategory click
     $(options.whatCategory).on('click', function() {
-      $(options.whatCategory).removeClass('active');
-      $(this).addClass('active');
-      that.swiper.slideTo($(this).data('slide-index'))
+      var slideIndex = $(this).data('slide-index');
+      that.setActive(options, slideIndex);
+      that.swiper.slideTo(slideIndex)
     });
+
+  },
+
+  setActive: function(options, index) {
+    $(options.whatCategory).removeClass('active');
+    var slideCount = $(options.whatCategory).length;
+    $(options.whatCategory + options.whatSlideIndex.replace('__INDEX__', index % slideCount)).addClass('active');
   }
+
 };
 
 var contactForm = {
@@ -52,8 +69,9 @@ var contactForm = {
 (function($, Swiper) {
 
   var options = {};
-  options.whatSlider    = '.section-what--swiper';
-  options.whatCategory  = '.section-what--what';
+  options.whatSlider      = '.section-what--swiper';
+  options.whatCategory    = '.section-what--what';
+  options.whatSlideIndex  = '[data-slide-index="__INDEX__"]';
 
 
   // init sections
