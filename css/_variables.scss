@@ -39,3 +39,6 @@ $what-box-position-active: -(($what-box-width * 1.25) - $what-box-width) / 2;
 $what-box-rotated-width: 332px; // Math.sqrt(2*Math.pow($what-box-width, 2))
 $what-box-margin: ($what-box-rotated-width - $what-box-width) / 2;
 $what-detail-max-width: $what-box-rotated-width * $what-box-amount;
+$page-padding: 10px;
+
+$mobile-box-scaling: 0.5;

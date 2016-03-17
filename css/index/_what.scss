@@ -102,12 +102,6 @@
 
 }
 
-@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1)) and (max-width: $what-box-rotated-width * $what-box-amount) {
-  .section-what--what:last-child {
-    transform: translateY(-$what-box-rotated-width/2);
-  }
-}
-
 .section-what--swiper-container {
   position: relative;
   &::before {
@@ -199,5 +193,18 @@
     }
 
   }
+
+}
+
+@media all and (min-width: $what-box-rotated-width * ($what-box-amount - 1) - $page-padding * 2 + 1px) and (max-width: $what-box-rotated-width * $what-box-amount + $page-padding * 2 - 1px) {
+  .section-what--what:last-child {
+    transform: translateY(-$what-box-rotated-width/2);
+  }
+  .section-what--container {
+    height: $what-box-rotated-width * 1.5;
+  }
+}
+
+@media all and (max-width: $what-box-rotated-width * ($what-box-amount - 1) - $page-padding * 2 + 1px) {
 
 }
